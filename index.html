@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URNA ELETRÔNICA</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'sora';
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 70px);
+        }
+
+        .container {
+            display: flex;
+            border: 1px solid black;
+            padding: 1rem;
+            width: 100%;
+            max-width: 700px;
+            justify-content: space-between;
+            border-radius: 4px;
+            box-shadow: 5px 5px 5px 15px rgb(53, 52, 52);
+        }
+
+        button {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        button.btn-num {
+            width: 120px;
+            height: 50px;
+        }
+
+        input {
+            width: 250px;
+            height: 290px;
+            outline: none;
+            font-size: 6rem;
+            text-align: center;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn {
+            padding: .5rem;
+        }
+
+        .counting-votes {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: -20px auto;
+        }
+
+        .counting-votes label {
+            font-size: 2rem;
+        }
+
+        #bolsonaro,
+        #lula,
+        #nulo {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #bolsonaro {
+            color: blue;
+        }
+
+        #lula {
+            color: red;
+        }
+
+        .btn-confirma {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-corrige {
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .btn-branco {
+            border-radius: 4px;
+            border: none;
+        }
+
+        .btn-num {
+            border-radius: 4px;
+            border: none;
+        }
+
+        .display {
+            background-size: 100% 100%;
+            background-position: center;
+            background-clip: border-box;
+            z-index: 999;
+        }
+
+        .display img {
+            max-width: 200px;
+        }
+    </style>
+    <div class="flex">
+        <div class="container">
+            <div class="display"><input type="text" /></div>
+            <div class="keyboard">
+                <table>
+                    <tr>
+                        <td>
+                            <h2>Justiça eleitoral</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <button class="btn-num">1</button>
+                            <button class="btn-num">2</button>
+                            <button class="btn-num">3</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn-num">4</button>
+                            <button class="btn-num">5</button>
+                            <button class="btn-num">6</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn-num">7</button>
+                            <button class="btn-num">8</button>
+                            <button class="btn-num">9</button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="btn-num">0</button>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <button class="btn btn-branco">Branco</button>
+                            <button class="btn btn-corrige">Corrige</button>
+                            <button class="btn btn-confirma">Confirma</button>
+                        </td>
+                    </tr>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="counting-votes">
+        <div>
+            <label style="color: green;" for="bolsonaro">BOLSONARO</label>
+            <span style="border: 1px solid green; padding: 1rem;" id="bolsonaro">0</span>
+        </div>
+        <div>
+            <label for="nulo">VOTOS NULOS</label>
+            <span style="border: 1px solid black; padding: 1rem;" id="nulo">0</span>
+        </div>
+        <div>
+            <label style="color: red;" for="lula">LULA</label>
+            <span style="border: 1px solid green; padding: 1rem;" style="color: rgb(204, 23, 23);" id="lula">0</span>
+        </div>
+        <div>
+            <label style="color: blue;" for="branco">BRANCOS</label>
+            <span style="border: 1px solid green; padding: 1rem; font-size: 1.8rem;" style="color: rgb(204, 23, 23);" id="branco">0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="aula.js"></script>
+</body>
+
+</html>
